@@ -3,25 +3,14 @@ import {AsteroidCardImage} from "./AsteroidCardImage/AsteroidCardImage";
 import {AsteroidCardContent} from "./AsteroidCardContent/AsteroidCardContent";
 import {AsteroidCardAction} from "./AsteroidCardAction/AsteroidCardAction";
 
-export const AsteroidCard = () =>{
+export const AsteroidCard = (props) =>{
+    const {name, date, distance, size, isDangerous} = props;
     return (
-        <div className={styles.cardRegular}>
+        <div className={isDangerous ? styles.cardRed : styles.cardRegular}>
             <div className={styles.card}>
                 <AsteroidCardImage/>
-                <AsteroidCardContent name={"First"} date={"18 ноября 2024 года"} distance={126332} size={10}/>
-                <AsteroidCardAction/>
-            </div>
-        </div>
-    )
-}
-
-export const DangerAsteroidCard = () =>{
-    return (
-        <div className={styles.cardRed}>
-            <div className={styles.card}>
-                <AsteroidCardImage/>
-                <AsteroidCardContent name={"First"} date={"18 ноября 2024 года"} distance={126332} size={10}/>
-                <AsteroidCardAction/>
+                <AsteroidCardContent name={name} date={date} distance={distance} size={size}/>
+                <AsteroidCardAction isDangerous={isDangerous}/>
             </div>
         </div>
     )
