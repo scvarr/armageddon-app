@@ -8,22 +8,26 @@
 .content {
     display: flex;
     flex-direction: column;
-    width: 80vw;
-    align-items: center;
+    width: 920px;
+    align-self: center;
     flex-wrap: nowrap;
     grid-gap: 5px;
+}
+
+.listOfAsteroids {
+    align-self: start;
 }
 
 .margin {
     width: 3%;
 }
 .topChoices {
-    width: 80vw;
+    width: 920px;
     display: flex;
     flex-direction: row;
 }
 .topBorder {
-    width: 80vw;
+    width: 920px;
     height: 1px;
     background-color: #000000;
 }

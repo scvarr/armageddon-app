@@ -1,7 +1,7 @@
 .card {
     display: flex;
     flex-direction: row;
-    width: 80vw;
+    width: 920px;
     height: 10vw;
     justify-content: space-around;
     box-sizing: border-box;
@@ -9,6 +9,7 @@
     border: #000000 solid 1px;
     align-items: center;
     background: transparent 100%;
+
 }
 
 .cardRegular {
