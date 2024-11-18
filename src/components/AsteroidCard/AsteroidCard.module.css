@@ -1,0 +1,20 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    height: 230px;
+    justify-content: space-around;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: #000000 solid 1px;
+    align-items: center;
+    background: transparent 100%;
+}
+
+.cardRegular {
+    background: linear-gradient(90deg, #CFF37D 0%, #7DE88C 100%);
+}
+
+.cardRed {
+    background: linear-gradient(90deg, #FF7373 0%, #ff0000 100%);
+}

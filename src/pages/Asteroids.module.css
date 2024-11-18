@@ -1,0 +1,37 @@
+.markup {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    align-items: center;
+}
+
+.margin {
+    width: 20%;
+}
+.topChoices {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+}
+.topBorder {
+    width: 80vw;
+    height: 1px;
+    background-color: #000000;
+}
+.showDangerousOnly {
+
+}
+.distanceMode {
+    margin-left: auto;
+}
+
+.gap {
+    height: 1vw;
+}
