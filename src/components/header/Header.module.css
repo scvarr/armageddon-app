@@ -1,14 +1,22 @@
-.headPage{
+.header {
+    display: flex;
+    flex-direction: column;
+    width: 920px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.headPage {
     width: 920px;
     display: flex;
     flex-direction: row;
     column-gap: 2em;
-    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .headTitle {
     width: 35%;
 }
+
 .defLinkText {
     margin-left: auto;
     text-decoration-line: none;
@@ -21,4 +29,35 @@
 
 .destroymentLink {
     align-self: flex-end;
+}
+
+.topBorder {
+    width: 920px;
+    height: 1px;
+    background-color: #000000;
+}
+
+.gap {
+    height: 1vw;
+}
+
+.distanceChooser {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.showDangerousOnly {
+
+}
+
+.topChoices {
+    width: 920px;
+    display: flex;
+    flex-direction: row;
+}
+
+.distanceMode {
+    margin-left: auto;
 }

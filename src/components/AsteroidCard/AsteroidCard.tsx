@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { AsteroidCardImage } from './AsteroidCardImage/AsteroidCardImage'
 import { AsteroidCardAction } from './AsteroidCardAction/AsteroidCardAction'
 import styles from './AsteroidCard.module.css'
 import { AsteroidCardContent } from './AsteroidCardContent/AsteroidCardContent'
+import { AsteroidsContext } from '../asteroids-context/AsteroidsContext'
+
 
 type AsteroidCardProps = {
     name: string
@@ -18,13 +20,15 @@ type AsteroidCardProps = {
 }
 export const AsteroidCard = (props: AsteroidCardProps) => {
     const { name, date, distance, size, isDangerous } = props
+
+    const {addAsteroid} = useContext(AsteroidsContext)
     return (
-        <div className={styles.insertgap}>ф
+        <div className={styles.insertgap}>
             <div className={isDangerous ? styles.cardRed : styles.cardRegular}>
                 <div className={styles.card}>
                     <AsteroidCardImage />
                     <AsteroidCardContent name={name} date={date} distance={distance} size={size} />
-                    <AsteroidCardAction isDangerous={isDangerous} />
+                    <AsteroidCardAction isDangerous={isDangerous} onClick={() => addAsteroid(props)} />
                 </div>
             </div>
             <div className={styles.gap}></div>

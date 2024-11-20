@@ -48,40 +48,18 @@ export const Asteroids = () => {
                 setAsteroids(asteroids)
             })
     }, [])
-    const { onlyDangerous, setOnlyDangerous, setDistanceMode } = useContext(AsteroidsContext)
+    const { onlyDangerous } = useContext(AsteroidsContext)
     return (
-        <div className={styles.markup}>
-            <div className={styles.margin}></div>
+        <>
+            <Header />
             <div className={styles.content}>
-                <Header />
-                <div className={styles.gap}></div>
-                <div className={styles.topBorder}></div>
-                <div className={styles.topChoices}>
-                    <div>
-                        <div className={styles.showDangerousOnly} onClick={() => setOnlyDangerous(!onlyDangerous)}>
-                            <input type={'checkbox'} value={onlyDangerous as unknown as string}></input>
-                            Показать только опасные
-                        </div>
-                    </div>
-                    <div className={styles.distanceMode}>
-                        Расстояние{' '}
-                        <button className={styles.distanceChooser} onClick={() => setDistanceMode(true)}>
-                            в километрах,
-                        </button>
-                        <button className={styles.distanceChooser} onClick={() => setDistanceMode(false)}>
-                            {' '}
-                            в дистанциях до луны
-                        </button>
-                    </div>
-                </div>
                 <div className={styles.listOfAsteroids}>
                     {onlyDangerous
-                        ? asteroids.filter((it) => it.isDangerous).map((item) => <AsteroidCard key={item.id} {...item}  />)
-                        : asteroids.map((item) => <AsteroidCard key={item.id} {...item}  />)}
-                    <div className={styles.gap}></div>
+                        ? asteroids.filter((it) => it.isDangerous).map((item) => <AsteroidCard key={item.id} {...item} />)
+                        : asteroids.map((item) => <AsteroidCard key={item.id} {...item} />)}
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 
