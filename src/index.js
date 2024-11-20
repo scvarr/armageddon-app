@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {createBrowserRouter, Navigate, RouterProvider} from "react-router-dom";
 import {Asteroids} from "./pages/Asteroids";
 import {Destroyment} from "./pages/Destroyment";
 import {Asteroid} from "./pages/Asteroid";
@@ -9,6 +9,10 @@ import {Asteroid} from "./pages/Asteroid";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const router = createBrowserRouter([
+    {
+      path: "/",
+        element: <Navigate to="/Asteroids" />
+    },
     {
         path: "/asteroids",
         element: <Asteroids />,

@@ -41,3 +41,9 @@
 .gap {
     height: 1vw;
 }
+.distanceChooser {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+}
