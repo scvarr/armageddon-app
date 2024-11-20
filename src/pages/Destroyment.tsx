@@ -14,7 +14,8 @@ export const Destroyment = () => {
                 <div className={styles.listOfAsteroids}>
                     {destroyment.map((item) => (
                         <AsteroidCard key={item.id} {...item} />
-                    ))}
+                    ))
+                    }
                 </div>
             </div>
         </>

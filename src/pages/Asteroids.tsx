@@ -17,6 +17,7 @@ export const Asteroids = () => {
             size: number
             isDangerous: boolean
             id: string
+            destroy: boolean
         }[]
     >([])
 
@@ -43,6 +44,7 @@ export const Asteroids = () => {
                         isDangerous: item.is_potentially_hazardous_asteroid as boolean,
                         size: Math.trunc(size) as number,
                         id: item.id as string,
+                        destroy: false
                     }
                 })
                 setAsteroids(asteroids)
