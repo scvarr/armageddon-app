@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { AsteroidCardImage } from './AsteroidCardImage/AsteroidCardImage'
-import { AsteroidCardContent } from './AsteroidCardContent/AsteroidCardContent'
 import { AsteroidCardAction } from './AsteroidCardAction/AsteroidCardAction'
 import styles from './AsteroidCard.module.css'
-
+import { AsteroidCardContent } from './AsteroidCardContent/AsteroidCardContent'
 
 type AsteroidCardProps = {
     name: string
@@ -15,17 +14,16 @@ type AsteroidCardProps = {
     size: number
     isDangerous: boolean
     id: string
-    distanceMode: boolean
+    //distanceMode: boolean
 }
 export const AsteroidCard = (props: AsteroidCardProps) => {
-    const { name, date, distance, size, isDangerous, distanceMode } = props
-    //const distanceMode = useContext(AsteroidsContext)
+    const { name, date, distance, size, isDangerous } = props
     return (
-        <div className={styles.insertgap}>
+        <div className={styles.insertgap}>ф
             <div className={isDangerous ? styles.cardRed : styles.cardRegular}>
                 <div className={styles.card}>
                     <AsteroidCardImage />
-                    <AsteroidCardContent name={name} date={date} distance={distance} distanceMode={distanceMode} size={size} />
+                    <AsteroidCardContent name={name} date={date} distance={distance} size={size} />
                     <AsteroidCardAction isDangerous={isDangerous} />
                 </div>
             </div>
