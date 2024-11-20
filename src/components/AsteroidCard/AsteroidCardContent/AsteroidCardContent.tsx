@@ -1,8 +1,9 @@
+import React from 'react'
 import styles from "./AsteroidCardContent.module.css";
 
-export const AsteroidCardContent = (props) => {
-    const {name, date, distance, size, distanceMode} = props;
 
+export const AsteroidCardContent = (props) => {
+    const {name, date, distance, distanceMode, size} = props;
 
     return (
         <div>

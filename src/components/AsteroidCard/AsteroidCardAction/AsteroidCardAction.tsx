@@ -1,4 +1,5 @@
-import styles from './AsteroidCard.module.css';
+import React from 'react'
+// import styles from './AsteroidCard.module.css';
 
 export const AsteroidCardAction = ({isDangerous}) => {
     return (

@@ -8,7 +8,7 @@
 .content {
     display: flex;
     flex-direction: column;
-    width: 920px;
+    width: 80vw;
     align-self: center;
     flex-wrap: nowrap;
     grid-gap: 5px;
@@ -16,6 +16,7 @@
 
 .listOfAsteroids {
     align-self: start;
+
 }
 
 .margin {

@@ -1,35 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import {createBrowserRouter, Navigate, RouterProvider} from "react-router-dom";
-import {Asteroids} from "./pages/Asteroids";
-import {Destroyment} from "./pages/Destroyment";
-import {Asteroid} from "./pages/Asteroid";
+import React, { createContext } from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
+import { Asteroids } from './pages/Asteroids'
+import { Destroyment } from './pages/Destroyment'
+import { Asteroid } from './pages/Asteroid'
+import { AsteroidsContextProvider } from './components/asteroids-context/AsteroidsContext'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
 
 const router = createBrowserRouter([
     {
-      path: "/",
-        element: <Navigate to="/Asteroids" />
+        path: '/',
+        element: <Navigate to="/Asteroids" />,
     },
     {
-        path: "/asteroids",
+        path: '/asteroids',
         element: <Asteroids />,
     },
     {
-        path: "/destroyment",
-        element: <Destroyment />
+        path: '/destroyment',
+        element: <Destroyment />,
     },
     {
-        path: "/asteroid/:id",
+        path: '/asteroid/:id',
         element: <Asteroid />,
     },
-]);
+])
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
 root.render(
-  <React.StrictMode>
-      <RouterProvider router={router} />
-  </React.StrictMode>
-);
-
-
+    <React.StrictMode>
+        <AsteroidsContextProvider>
+            <RouterProvider router={router} />
+        </AsteroidsContextProvider>
+    </React.StrictMode>
+)

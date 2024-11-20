@@ -9,7 +9,6 @@
     border: #000000 solid 1px;
     align-items: center;
     background: transparent 100%;
-
 }
 
 .cardRegular {
@@ -20,4 +19,15 @@
 .cardRed {
     border-radius: 10px;
     background: linear-gradient(90deg, #FF7373 0%, #ff0000 100%);
+}
+
+.insertgap {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.gap {
+    background: none;
+    border: none;
 }
