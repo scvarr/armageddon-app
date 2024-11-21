@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
@@ -6,8 +6,6 @@ import { Asteroids } from './pages/Asteroids'
 import { Destroyment } from './pages/Destroyment'
 import { Asteroid } from './pages/Asteroid'
 import { AsteroidsContextProvider } from './components/asteroids-context/AsteroidsContext'
-
-
 
 const router = createBrowserRouter([
     {

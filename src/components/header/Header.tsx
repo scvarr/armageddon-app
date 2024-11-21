@@ -1,10 +1,13 @@
-import React, { useContext } from 'react'
+import React, { memo, useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Header.module.css'
 import { AsteroidsContext } from '../asteroids-context/AsteroidsContext'
+import { getUserKey } from '../../utils/getUserKey'
 
-export const Header = () => {
+export const Header = memo( () => {
     const { onlyDangerous, setOnlyDangerous, setDistanceMode } = useContext(AsteroidsContext)
+    const [inputOpened, setInputOpened] = useState(false)
+
     return (
         <div className={styles.header}>
             <div className={styles.headPage}>
@@ -24,9 +27,22 @@ export const Header = () => {
                     </Link>
                 </div>
             </div>
+            <div>{getUserKey() === 'DEMO_KEY' ? <button onClick={() => setInputOpened(!inputOpened)}>API KEY ADD</button> : <div>API KEY Provided</div>}</div>
+            <div>
+                {inputOpened ? (
+                    <input
+                        onChange={(ev) => {
+                            if (ev.target.value.length === 40) {
+                                localStorage.setItem('API_KEY', ev.target.value)
+                                setInputOpened(false)
+                            }
+                        }}
+                    />
+                ) : null}
+            </div>
             <div className={styles.topChoices}>
                 <div className={styles.showDangerousOnly} onClick={() => setOnlyDangerous(!onlyDangerous)}>
-                    <input type={'checkbox'} value={onlyDangerous as unknown as string} />
+                    <input id="danger" type={'checkbox'} value={onlyDangerous as unknown as string} />
                     Показать только опасные
                 </div>
                 <div className={styles.distanceMode}>
@@ -45,4 +61,5 @@ export const Header = () => {
             <div className={styles.gap}></div>
         </div>
     )
-}
+})
+Header.displayName = 'Header'

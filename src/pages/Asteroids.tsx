@@ -4,6 +4,7 @@ import { AsteroidCard } from '../components/AsteroidCard/AsteroidCard'
 import { useContext, useEffect, useState } from 'react'
 import React from 'react'
 import { AsteroidsContext } from '../components/asteroids-context/AsteroidsContext'
+import { getUserKey } from '../utils/getUserKey'
 
 export const Asteroids = () => {
     const [asteroids, setAsteroids] = useState<
@@ -22,7 +23,7 @@ export const Asteroids = () => {
     >([])
 
     useEffect(() => {
-        fetch('https://api.nasa.gov/neo/rest/v1/feed?api_key=nOVahaYE3LLJCXvonb49Lxaw8dHmxBJj8TrJt1gA')
+        fetch(`https://api.nasa.gov/neo/rest/v1/feed?api_key=${getUserKey()}`)
             .then((res) => {
                 return res.json()
             })

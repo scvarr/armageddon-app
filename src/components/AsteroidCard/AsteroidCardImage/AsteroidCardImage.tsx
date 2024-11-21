@@ -1,5 +1,5 @@
 import React from 'react'
-// import styles from './AsteroidCard.module.css';
+// import styles from './AsteroidCardAction.module.css';
 
 export const AsteroidCardImage = () => {
     return (
