@@ -13,6 +13,10 @@ const router = createHashRouter([
         element: <Asteroids />,
     },
     {
+        path: '/Asteroids',
+        element: <Asteroids />,
+    },
+    {
         path: '/destroyment',
         element: <Destroyment />,
     },
